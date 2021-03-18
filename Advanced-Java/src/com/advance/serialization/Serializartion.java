@@ -27,11 +27,11 @@ class SerializeDemo{
 		//deserialization
 		FileInputStream fis = new FileInputStream("Test.txt");
 		ObjectInputStream in = new ObjectInputStream(fis);
-		Serialization d2 = (Serialization)in.readObject();
+		Serialization d = (Serialization)in.readObject();
 				
-				System.out.println("a = "+d2.a);
-				System.out.println("b = "+d2.b);
-				System.out.println("c = "+d2.c);
+				System.out.println("a = "+d.a);
+				System.out.println("b = "+d.b);
+				System.out.println("c = "+d.c);
 	
 	}
 
