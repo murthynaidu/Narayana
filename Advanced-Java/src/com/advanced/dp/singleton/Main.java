@@ -4,12 +4,12 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Sample1 test1 = Sample1.getInstance();
-		Sample1 test2 = Sample1.getInstance();
-		Sample1 test3 = Sample1.getInstance();
-		Sample2 test4 = Sample2.getInstance();
-		Sample2 test5 = Sample2.getInstance();
-		Sample2 test6 = Sample2.getInstance();
+		SingletonE test1 = SingletonE.getInstance();
+		SingletonE test2 = SingletonE.getInstance();
+		SingletonE test3 = SingletonE.getInstance();
+		SingletonL test4 = SingletonL.getInstance();
+		SingletonL test5 = SingletonL.getInstance();
+		SingletonL test6 = SingletonL.getInstance();
 
 	}
 
