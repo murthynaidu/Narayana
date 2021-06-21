@@ -1,0 +1,127 @@
+create database hostel;
+create table hostel.Members(Id integer not null, Name text,
+ Floor integer, Room integer, primary key(Id));
+ drop table hostel.members;
+ create table hostel.Members(Id int not null , Name varchar(30),
+ Floor int, Room int, primary key(Id));
+ insert into hostel.members values (1,'Dhanu',4,404);
+ insert into hostel.members values (2,'Narayana',3,304);
+ insert into hostel.members values (3,'Anji',2,204);
+ insert into hostel.members values (4,'Ajay',1,104);
+ select * from hostel.members;
+ create table hostel.Workers(Id int  not null , Name varchar(32),
+ salary int, Designation varchar(32), primary key(Id));
+ insert into hostel.workers values (1,'Prasad',15000,'Supervisier');
+insert into hostel.workers values (2,'srinu',17000,'Cook');
+insert into hostel.workers values (3,'satyanarayana',10000,'Sweeper');
+insert into hostel.workers values (4,'aakash',16000,'Ass Cook');
+select * from hostel.workers;
+create table hostel.Payment(PId int  not null auto_increment, Id int  not null,
+ Amount_paid int ,Due int, primary key(PId));
+  insert into hostel.payment values (1,1,5000,1000);
+  insert into hostel.payment values (2,2,4000,2000);
+  insert into hostel.payment values (3,3,3000,3000);
+  insert into hostel.payment values (4,4,6000,0000);
+select * from hostel.payment;
+alter table hostel.members add (Rent int, sharing int);
+update hostel.members set Rent=9000,sharing=1 where Id=1;
+update hostel.members set Rent=8000,sharing=2 where Id=2;
+update hostel.members set Rent=7000,sharing=3 where Id=3;
+update hostel.members set Rent=6000,sharing=4 where Id=4;
+
+alter table hostel.workers add shift varchar(10);
+update hostel.workers set shift='morning' where Id=1;
+update hostel.workers set shift='afternoon' where Id=2;
+update hostel.workers set shift='night' where Id=3;
+update hostel.workers set shift='morning' where Id=4;
+
+alter table hostel.payment add type varchar(10);
+update hostel.payment set type='cash' where PId=1;
+update hostel.payment set type='tez' where PId=2;
+update hostel.payment set type='paytm' where PId=3;
+update hostel.payment set type='phonepay' where PId=4;
+
+update hostel.payment set Amount_paid=8000 where PId=1;
+update hostel.payment set Amount_paid=6000 where PId=2;
+update hostel.payment set Amount_paid=4000 where PId=3;
+update hostel.payment set Amount_paid=6000 where PId=4;
+
+select * from hostel.payment;
+
+ALTER TABLE hostel.payment ADD CONSTRAINT dhanarayana FOREIGN KEY (Id) REFERENCES members(Id);
+
+insert into hostel.payment values (12,4,5000,00,'Tez');
+use hostel;
+select * from hostel.members join hostel.payment on members.id=payment.id;
+
+
+
+
+
+
+
+
+
+use hostel;
+
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    PRIMARY KEY (ID)
+);
+select * from hostel.Persons;
+insert into hostel.persons values(1001, 'L1','F1',21);
+insert into hostel.persons values(1002, 'L2','F2',22);
+insert into hostel.persons values(1003, 'L3','F3',23);
+insert into hostel.persons values(1004, 'L4','F4',24);
+insert into hostel.persons values(1005, 'L5','F5',25);
+insert into hostel.persons values(1006, 'L6','F6',26);
+insert into hostel.persons values(1007, 'L7','F7',27);
+insert into hostel.persons values(1008, 'L8','F8',28);
+insert into hostel.persons values(1009, 'L9','F9',29);
+insert into hostel.persons values(1010, 'L10','F10',30);
+
+CREATE TABLE Orders (
+    OrderID int NOT NULL,
+    OrderNumber int NOT NULL,
+    PersonID int,
+    PRIMARY KEY (OrderID),
+    FOREIGN KEY (PersonID) REFERENCES Persons(ID)
+);
+select * from hostel.orders;
+insert into hostel.orders values (1,1234,1001);
+insert into hostel.orders values (2,1235,1002);
+insert into hostel.orders values (3,1236,1003);
+insert into hostel.orders values (4,1237,1004);
+insert into hostel.orders values (5,1238,1005);
+insert into hostel.orders values (6,1239,1006);
+insert into hostel.orders values (7,1230,1007);
+insert into hostel.orders values (8,1231,1008);
+insert into hostel.orders values (9,1232,1009);
+insert into hostel.orders values (10,1233,1010);
+insert into hostel.orders values (11,1336,1032);
+
+
+
+
+
+
+select * from narayana.employees;
+
+insert into narayana.employees (Name,lastname) values ('chiru','konidala');
+
+insert into narayana.employees (Name,lastname) values ('vijay','devarakonda');
+
+insert into narayana.employees (Name,lastname) values ('prabhas','uppalapati');
+
+insert into narayana.employees (Name,lastname) values ('mahesh','Ghattamaneni');
+
+insert into narayana.employees (Name,lastname) values ('narayana_rao','dasarii');
+
+insert into narayana.employees (Name,lastname) values ('mohan_babu','manchu');
+
+update narayana.employees set lastname='dasari' where ID =26;
+
+delete from narayana.employees where ID =27;
